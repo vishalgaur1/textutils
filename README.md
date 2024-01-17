@@ -21,9 +21,9 @@ npm install react-textform
 # or
 yarn add react-textform
 ```
-# Import and Use
+### Import and Use
 
-
+```
 import React, { useState } from 'react';
 import Textform from 'react-textform';
 
@@ -39,15 +39,16 @@ function App() {
 }
 
 export default App;
+```
 
 ## Props
 
-    heading: The heading for the text manipulation section.
-    mode: The mode for the component, can be 'light' or 'dark'. Changes background and text color accordingly.
+  heading: The heading for the text manipulation section.
+  mode: The mode for the component, can be 'light' or 'dark'. Changes background and text color accordingly.
 
 ## Styling
 
 The component supports two styles based on the mode prop:
 
-    Light Mode: White background with black text.
-    Dark Mode: Grey background with white text.
+  Light Mode: White background with black text.
+  Dark Mode: Grey background with white text.
