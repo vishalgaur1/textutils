@@ -21,6 +21,24 @@ npm install react-textform
 # or
 yarn add react-textform
 ```
+# Import and Use
+
+
+import React, { useState } from 'react';
+import Textform from 'react-textform';
+
+function App() {
+  const [mode, setMode] = useState('light');
+
+  return (
+    <div>
+      <h1>Your React App</h1>
+      <Textform heading="Text Manipulation" mode={mode} />
+    </div>
+  );
+}
+
+export default App;
 
 ## Props
 
