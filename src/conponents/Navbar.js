@@ -1,5 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 // import PropTypes from 'prop-types'
+import './custom-styles.css';
+
+
+const ccr = ()=>{
+    // setMode('red');
+    document.body.style.backgroundColor = '#db343c'
+}
+const ccg = ()=>{
+  
+}
+const cco = ()=>{
+  
+}
+
 
 
 export default function Navbar(props) {
@@ -20,10 +34,45 @@ export default function Navbar(props) {
             </li>
 
           </ul>
-          <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
-            <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{`Enable ${props.mode === 'light' ? 'dark' : 'light'} Mode`}</label>
+          <div style={{color: props.mode === 'dark' ? 'white' : 'black'}} className="d-flex">
+
+
+
+
+
+
+
+
+
+
+            <div className="custom-radio-group d-flex">
+                  <div>
+                  <button onClick={ccr} className='red mx-3'></button>
+                  </div>
+                  <div>
+                  <button onClick={ccg} className='green mx-3'></button>
+                  </div>
+                  <div>
+                  <button onClick={cco} className='orange mx-3'></button>
+                  </div>
+            </div>
+
+
+
+
+
+
+
+
+
+              <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
+                <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{`Enable ${props.mode === 'light' ? 'dark' : 'light'} Mode`}</label>
+              </div>
+
+
           </div>
+
 
           {/* <form className="d-flex" role="search">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
