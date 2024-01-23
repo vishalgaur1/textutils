@@ -3,20 +3,17 @@ import React, {useState} from 'react'
 import './custom-styles.css';
 
 
-const ccr = ()=>{
-    // setMode('red');
-    document.body.style.backgroundColor = '#db343c'
-}
-const ccg = ()=>{
-  
-}
-const cco = ()=>{
-  
-}
+
 
 
 
 export default function Navbar(props) {
+  const [isToggled, setIsToggled] = useState(true)
+  const toggleHandler=()=>{
+    setIsToggled(!isToggled);
+    props.toggleMode(!isToggled);
+  }
+  console.log(props.mode);
   return (
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
       <div className="container-fluid">
@@ -47,14 +44,14 @@ export default function Navbar(props) {
 
             <div className="custom-radio-group d-flex">
                   <div>
-                  <button onClick={ccr} className='red mx-3'></button>
+                  <button onClick={() =>props.colorchange('danger')} className='red mx-3'></button>
                   </div>
                   <div>
-                  <button onClick={ccg} className='green mx-3'></button>
+                  <button onClick={() =>props.colorchange('success')} className='green mx-3'></button>
                   </div>
-                  <div>
+                  {/* <div>
                   <button onClick={cco} className='orange mx-3'></button>
-                  </div>
+                  </div> */}
             </div>
 
 
@@ -66,7 +63,7 @@ export default function Navbar(props) {
 
 
               <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
-                <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                <input className="form-check-input" onClick={toggleHandler} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
                 <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{`Enable ${props.mode === 'light' ? 'dark' : 'light'} Mode`}</label>
               </div>
 

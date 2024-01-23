@@ -1,5 +1,11 @@
 import React, { useState } from 'react'
 
+const bgColorMap = {
+    dark:'#52529d',
+    danger:'#db343c',
+    success:'green'
+  }
+
 export default function Textform(props) {
     const handleUpClick = () => {
         let newText = text.toUpperCase();
@@ -30,7 +36,7 @@ export default function Textform(props) {
     const [text, setText] = useState('');
     return (
         <>
-            <div style={{ background: props.mode === 'dark' ? '#52529d' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}>
+            <div style={{ background: bgColorMap[props.mode], color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <div className='container' >
                     <h1>{props.heading}</h1>
                     <div className="mb-3">
