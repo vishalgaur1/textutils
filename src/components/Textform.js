@@ -42,16 +42,16 @@ export default function Textform(props) {
                     <div className="mb-3">
                         <textarea className="form-control" value={text} onChange={handleOnChange} style={{ background: props.mode === 'dark' ? '#72729f' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }} id="myBox" rows="8"></textarea>
                     </div>
-                    <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to UPPERCASE</button>
-                    <button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to lowercase</button>
-                    <button className="btn btn-primary mx-2" onClick={handleClearText}>Clear Text</button>
-                    <button className="btn btn-primary mx-2" onClick={handleCopyText}>Copy Text</button>
-                    <button className="btn btn-primary mx-2" onClick={handleRmvExtTxt}>Remove Extra Spaces</button>
+                    <button className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert to UPPERCASE</button>
+                    <button className="btn btn-primary mx-2 my-2" onClick={handleLoClick}>Convert to lowercase</button>
+                    <button className="btn btn-primary mx-2 my-2" onClick={handleClearText}>Clear Text</button>
+                    <button className="btn btn-primary mx-2 my-2" onClick={handleCopyText}>Copy Text</button>
+                    <button className="btn btn-primary mx-2 my-2" onClick={handleRmvExtTxt}>Remove Extra Spaces</button>
                 </div>
                 <div className="container my-3" >
                     <h2>Your Text Summary</h2>
-                    <p>{text.split(" ").length} Words and {text.length} Characters</p>
-                    <p>{Math.round(0.008 * text.split(" ").length * 100) / 100} Minutes to Read</p>
+                    <p>{text.split(" ").filter((element)=> {return element.length!==0}).length} Words and {text.length} Characters</p>
+                    <p>{Math.round(0.008 * text.split(" ").filter((element)=> {return element.length!==0}).length * 100) / 100} Minutes to Read</p>
                     <h2>Preview</h2>
                     <p>{text}</p>
                 </div>
