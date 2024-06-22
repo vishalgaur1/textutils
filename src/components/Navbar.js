@@ -18,8 +18,6 @@ export default function Navbar(props) {
   }
 
 
-  console.log(props.mode);
-
   
   return (
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
@@ -47,7 +45,7 @@ export default function Navbar(props) {
 
 
 
-
+{/* 
 
             <div className="custom-radio-group d-flex">
                   <div>
@@ -56,11 +54,8 @@ export default function Navbar(props) {
                   <div>
                   <button onClick={() =>props.colorchange('success')} className='green mx-3'></button>
                   </div>
-                  {/* <div>
-                  <button onClick={cco} className='orange mx-3'></button>
-                  </div> */}
             </div>
-
+ */}
 
 
 

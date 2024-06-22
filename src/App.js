@@ -32,15 +32,15 @@ function App() {
     }
   };
 
-  const ccr = (color) => {
-    console.log('buttonClicked');
-    setMode(color);
-  };
+  // const ccr = (color) => {
+  //   console.log('buttonClicked');
+  //   setMode(color);
+  // };
 
   return (
     <>
       {/* <Router> */}
-        <Navbar title="TextUtils" About="About" mode={mode} toggleMode={toggleMode} colorchange={ccr} />
+        <Navbar title="TextUtils" About="About" mode={mode} toggleMode={toggleMode}  />
         <Alert alert={alert} />
         <div className="container my-3">
           {/* <Routes>
